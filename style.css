@@ -1,0 +1,257 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #181a3f;
+}
+
+/* 
+===============
+    NAVBAR    
+===============
+*/
+
+.nav{
+    display: flex;
+    padding-left: 5px;
+    padding-right: 5px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1d2049;
+    height: 50px;
+}
+
+.nav-left{
+    font-size: 36px;
+    color: aliceblue;
+}
+
+#logo{
+    padding-top: 5px;
+    animation: rotate infinite forwards 5s;
+}
+
+@keyframes rotate{
+    0%{
+        transform: rotate(0deg);
+        transform-origin: center center;
+    }
+    100%{
+        transform: rotate(360deg);
+        transform-origin: center center;
+    }
+}
+
+
+.nav-right, .nav-right-items, .nav-links{
+    display: flex;
+    gap: 10px;
+    text-decoration: none;
+    color: rgb(189, 44, 44);
+    font-size: large;
+    font-weight: 700;
+    text-shadow: 1px 1px 5px  #fff;
+}
+
+#time{
+    color: aquamarine;
+}
+
+
+/*
+=============
+    MAIN
+=============
+*/
+
+main{
+    justify-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #181a3f;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    border-bottom-left-radius: 70px;
+    border-bottom-right-radius: 70px;
+    box-shadow: 0 50px 100px #ff7b0025;
+}
+
+.mainUp{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    border: 1px solid #000;
+    padding: 10px;
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-bottom: 20px;
+    border-radius: 30px;
+    width: 570px;
+    background: radial-gradient(
+      ellipse 90% 80% at center,
+      rgba(255,255,255,0.4) 10%,
+      rgba(255,255,255,0.4) 25%,
+      rgba(255,255,255,0.3) 50%,
+      rgba(255,255,255,0.2) 75%
+    ),
+
+    /* Corner boosts */
+    radial-gradient(circle at top left, rgba(255,255,255,0.25), transparent 40%),
+    radial-gradient(circle at top right, rgba(255,255,255,0.25), transparent 40%),
+    radial-gradient(circle at bottom left, rgba(255,255,255,0.25), transparent 40%),
+    radial-gradient(circle at bottom right, rgba(255,255,255,0.25), transparent 40%);
+
+    box-shadow: 0px 0px 10px #73d68ccc;
+
+}
+
+.add-modal{
+    font-size: 24px;
+    background: radial-gradient(rgb(130, 196, 92), #3cd362, rgb(69, 206, 35));
+    border: 1px solid #000;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 5px;
+
+}
+
+.add-modal:hover{
+    background: radial-gradient(rgb(140, 206, 102), rgb(70, 221, 108), rgb(79, 216, 45));
+}
+
+
+.modal{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.modalDispNone{
+    display: none;
+}
+
+/* INPUT TITLE */
+#Title{
+    font-family: 'Comic Sans MS';
+    font-size: 20px;
+    font-weight: 500;
+    border: 2px solid #000;
+    border-radius: 5px;
+    background: #111;
+    width: 335px;
+    padding: 5px;
+    color: #f00;
+    text-shadow: 1px 1px 7px #00ffff;
+}
+
+#Title::placeholder{
+    color: #fff;
+    font-family: Verdana;
+}
+
+#Title:focus{
+    background: #000;
+    box-shadow: 0 0 10px #00ffff;
+    font-family: 'Comic Sans MS';
+}
+
+#Title:focus::placeholder{
+    /* color: #f00; */
+    font-family: 'Comic Sans MS';
+}
+
+/* INPUT DESCRIPTION */
+#Description{
+    resize: none;
+    font-size: 16px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    background: #111;
+    width: 500px;
+    padding: 5px;
+    color: #00ffff;
+    text-shadow: 2px 1px 5px #f00;
+}
+
+#Description::placeholder{
+    color: #fff;
+    font-family: Verdana;
+}
+
+#Description:focus{
+    background: #000;
+    box-shadow: 0 0 10px #f00;
+    font-family: 'Comic Sans MS';
+}
+
+#Description:focus::placeholder{
+    /* color: #0ff; */
+    font-family: 'Comic Sans MS';
+}
+
+#addTodo{
+    border: 1px solid #000;
+}
+
+/* ADD TODO BUTTON */
+#addTodo{
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+
+#addTodo:disabled{
+    box-shadow: 0 0 5px #ff0000;
+}
+#addTodo:enabled{
+    box-shadow: 0 0 5px #00ff00;
+}
+
+
+
+/* TODOS */
+.todos{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    /* border: 2px solid rebeccapurple; */
+    margin-left: 10px;
+
+}
+
+.todo{
+    display: block;
+    margin-top: 20px;
+    margin-left: 5px;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    background: radial-gradient(rgba(157, 190, 137, 0.74), #73d68ccc, rgb(152, 236, 131));
+    justify-items: center;
+    
+}
+
+.title{
+    display: flex;
+    margin: 10px 0px;
+    text-decoration: none;
+    list-style: none;
+    color: rgb(189, 44, 44);
+    font-size: 24px;
+    font-weight: 700;
+    text-shadow: 1px 1px 5px  #fff;
+}
+
+.desc{
+    text-decoration: none;
+    list-style: none;
+    color: rgb(25, 40, 255);
+    font-size: 18px;
+    font-weight: 700;
+    text-shadow: 0.5px 0.5px 5px  rgb(189, 44, 44);
+}

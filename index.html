@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ToDo App</title>
+</head>
+<body>
+    <header>
+        <div class="nav">
+            <div class="nav-left">
+                <img src="logo.png" alt="LOGO" height="30px" id="logo">
+                <span class="logo" id="logotext">ToDo Dashboard</span>
+            </div>
+            <div class="nav-right">
+                <li class="nav-right-items" id="home"><a class="nav-links"  href="#" target="_self">Home</a></li>
+                <li class="nav-right-items" id="git"><a  class="nav-links" href="https://github.com/Nirvaan-Kulchandani" target="blank">Profile</a></li>
+                <li class="nav-right-items" id="time">--:--:--</li>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="mainUp">
+            <button class="add-modal" id="addModal">📝 Add Item</button>
+            <div class="modal modalDispNone" id="modal">
+                <input type="text" id="Title" placeholder="Title: eg.'Finish Assignment 📖'" >
+                <textarea id="Description" rows="2" placeholder="Description: eg.'Complete Chapter-3 of Mathematics.'"></textarea>
+                <button id="addTodo">Add Todo ✍</button>
+            </div>
+        </div>
+        <div class="todos mainDown" id="todos">
+            
+        </div>
+
+        <script>
+            const updateTime = () => {
+            let time_now = new Date();
+            let hours = time_now.getHours();
+            let minutes = time_now.getMinutes();
+            let seconds = time_now.getSeconds();
+            if (hours < 10) {
+                hours = "0" + hours;
+            }
+            if (minutes < 10) {
+                minutes = "0" + minutes;
+            }
+            if (seconds < 10) {
+                seconds = "0" + seconds;
+            }
+            document.querySelector("#time").textContent = hours + ":" + minutes + ":" + seconds;
+            }
+            setInterval(updateTime, 1000);
+        </script>
+        <script src="script.js"></script>
+    </main>
+
+</body>
+</html>
